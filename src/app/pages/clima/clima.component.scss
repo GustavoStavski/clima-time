@@ -2,71 +2,106 @@
   position: fixed;
   inset: 0;
   display: block;
-  font-family: 'Poppins', sans-serif;
-  background: url(https://picsum.photos/1920/1080) no-repeat;
+  background-image: url(https://picsum.photos/1920/1080);
+  background-size: cover;
+  font-family: Arial, sans-serif;
 
   .clima-container {
-    position: relative;
-    min-height: 100vh;
     display: grid;
     place-items: center;
+    min-height: 100vh;
     padding: 24px;
+    text-align: center;
 
     .card {
-      width: 100%;
-      max-width: 420px;
-      background: rgba(255, 255, 255, 0.1);
-      backdrop-filter: blur(25px);
+      width: 95%;
+      max-width: 450px;
+      background-color: rgba(10, 14, 22, 0.75);
+      padding: 30px 40px;
       border-radius: 20px;
-      padding: 30px;
-      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
-      color: #000000;
-      text-align: center;
-      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      border: 0.5px solid rgba(255, 255, 255, 0.474);
+      backdrop-filter: blur(20px) saturate(1.5);
+      box-shadow: 0 10px 18px #6d6d6dd0;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 15px;
+
+      #titulo {
+        color: #000;
+        font-size: 24px;
+        margin-bottom: 10px;
+      }
+
+      .city {
+        color: #000;
+        font-size: 48px;
+        font-weight: bold;
+      }
+      .icon {
+        transform: scale(3);
+      }
+
+
+      .temp {
+        color: #000;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      #botao-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        gap: 10px;
+        margin-top: 15px;
+
+        .icon {
+          width: 60px;
+          height: 60px;
+        }
+
+        .desc {
+          color: #ededed;
+          font-size: 16px;
+          text-transform: capitalize;
+        }
+
+        #botao {
+          border: none;
+          border-radius: 25px;
+          width: 180px;
+          height: 45px;
+          font-size: 16px;
+          font-weight: bold;
+          color: #fff;
+          background: linear-gradient(90deg, #4facfe, #00f2fe);
+          background-size: 200% 100%;
+          background-position: left;
+          cursor: pointer;
+          transition: all 0.5s ease;
+        }
+
+        #botao:hover {
+          background-position: right;
+          transform: scale(1.05);
+        }
+      }
 
       &:hover {
-        transform: translateY(-10px);
-        box-shadow: 0 15px 35px rgba(0, 0, 0, 0.3);
+        transform: scale(1.05);
+        transition: 0.5s;
       }
 
-      h1 {
-        margin-bottom: 10px;
-        font-size: 1.8rem;
-        font-weight: 600;
-
-      }
-
-      p {
-        font-size: 1rem;
-        line-height: 1.5;
-        opacity: 0.9;
+      &::after {
+        content: "";
+        display: block;
+        width: 100%;
+        height: 100%;
+        background-image: url(https://cdn-0001.qstv.on.epicgames.com/UmFwHSIPPUUsHrSdrA/image/landscape_comp.jpeg);
+        background-size: cover;
+        transition: 1s;
       }
     }
   }
-}
-
-button {
-  padding: 15px 40px;
-  border-radius: 12px;
-  border: none;
-  font-family: 'Poppins', sans-serif;
-  font-size: 18px;
-  font-weight: 600;
-  color: #fff;
-  background: linear-gradient(135deg, #4facfe, #00f2fe);
-  cursor: pointer;
-  transition: all 0.3s ease;
-  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-
-/* Efeito hover */
-button:hover {
-  transform: -3px;
-  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
-  background: linear-gradient(135deg, #00f2fe, #4facfe);
-}
-
-/* Efeito quando pressionado */
-button:active {
-  transform: scale(0.95);
 }

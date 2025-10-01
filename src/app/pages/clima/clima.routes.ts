@@ -1,9 +1,8 @@
-import {Routes} from "@angular/router"
-import { ClimaComponent } from "./clima.component"
+import { Routes } from '@angular/router';
 
-export const climaRoutes : Routes = [
-  {
-    path: '',
-    loadComponent: () => import('./clima.component').then(r => ClimaComponent)
-  }
-]
+export const climaRoutes: Routes = [
+    {
+        path: '',
+        loadComponent: () => import('./clima.component').then(r => r.ClimaComponent)
+    }
+];
